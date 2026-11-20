@@ -1,0 +1,9 @@
+{
+  "name": "Riamo Carburant",
+  "short_name": "Riamo",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#1c1c1c",
+  "theme_color": "#1c1c1c",
+  "icons": [{ "src": "logo.png", "sizes": "512x512", "type": "image/png" }]
+}
