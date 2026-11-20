@@ -284,6 +284,6 @@ function checkAlerts(){
 
 /* ---------- PWA ---------- */
 if("serviceWorker" in navigator){
-  window.addEventListener("load",()=>navigator.serviceWorker.register("/sw.js").catch(()=>{}));
+  window.addEventListener("load",()=>localStorage.getItem("riamoConsent")==="yes" && navigator.serviceWorker.register("/sw.js").catch(()=>{}));
 }
 show("search");
