@@ -47,3 +47,9 @@ select{width:100%;background:var(--card);color:var(--txt);border:2px solid #444;
 .al span{color:var(--blue);cursor:pointer}
 .ad{min-height:90px;border:1px dashed #555;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#777;font-size:1rem;margin:24px 0}
 [hidden]{display:none!important}
+
+/* Chiffres en Roboto, lettres en Iceland */
+html,body,button,input,select,h1,h2,b,small,.pr,.place,.status,.drawer a,.st,.sw,.radio{
+  font-family:'Roboto','Iceland',system-ui,sans-serif;
+}
+.pr{font-weight:700;font-size:2.3rem}
