@@ -1,9 +1,15 @@
 {
+  "id": "/",
   "name": "Riamo Carburant",
-  "short_name": "Riamo",
+  "short_name": "Riamo Carburant",
+  "description": "Prix des carburants en France",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
   "background_color": "#1c1c1c",
   "theme_color": "#1c1c1c",
-  "icons": [{ "src": "logo.png", "sizes": "512x512", "type": "image/png" }]
+  "icons": [
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "logo.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
 }
