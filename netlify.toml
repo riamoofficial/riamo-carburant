@@ -5,3 +5,15 @@
   for = "/sw.js"
   [headers.values]
     Cache-Control = "no-cache"
+
+[build.environment]
+  NODE_VERSION = "20"
+
+[functions]
+  directory = "netlify/functions"
+  node_bundler = "esbuild"
+
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/api/:splat"
+  status = 200
