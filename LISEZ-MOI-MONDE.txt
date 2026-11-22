@@ -1,0 +1,4 @@
+Riamo Carburant - module Monde
+Fichiers : world.html, world.css, world.js, server/, netlify/functions/api.js, package.json, .env.example
+Lancer   : npm start   puis ouvrir http://localhost:3000/world.html
+Tester   : npm test    (test hors-ligne, sans réseau)

@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#16232B">
+<title>Riamo Carburant · Carte monde</title>
+<link rel="icon" href="logo.png">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.css">
+<link rel="stylesheet" href="world.css">
+</head>
+<body>
+<div id="map" aria-label="Carte"></div>
+
+<header class="top">
+  <div class="searchrow">
+    <a class="back" href="/" aria-label="Retour à l'accueil">‹</a>
+    <div class="searchbox">
+      <input id="q" type="search" placeholder="Ville, adresse, pays…" autocomplete="off" autocapitalize="off" spellcheck="false" enterkeyhint="search" aria-label="Rechercher un lieu">
+      <button id="clr" type="button" hidden aria-label="Effacer">×</button>
+    </div>
+  </div>
+  <ul id="sugg" hidden></ul>
+  <div class="modes" role="tablist">
+    <button type="button" role="tab" data-mode="fuel">Carburant</button>
+    <button type="button" role="tab" data-mode="ev">Bornes</button>
+    <button type="button" role="tab" data-mode="alert">Alertes</button>
+  </div>
+</header>
+
+<button id="locate" class="fab" type="button" aria-label="Ma position">
+  <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="3.5"/><circle cx="12" cy="12" r="8"/><path d="M12 1v3M12 20v3M1 12h3M20 12h3"/></svg>
+</button>
+<button id="here" class="pill" type="button" hidden>Rechercher dans cette zone</button>
+
+<section id="sheet" class="sheet" aria-live="polite">
+  <button id="grip" type="button" aria-label="Agrandir ou réduire la liste"><span></span></button>
+  <div class="filters">
+    <label>Carburant<select id="fSel"></select></label>
+    <label>Rayon<select id="fRad"></select></label>
+    <label id="fCurWrap">Devise<select id="fCur"></select></label>
+    <button id="fSort" type="button" aria-label="Changer le tri">Prix ↑</button>
+  </div>
+  <p id="status" role="status">Saisissez une ville ou touchez le viseur pour vous localiser.</p>
+  <div id="notes"></div>
+  <ul id="list"></ul>
+
+  <div id="alertView">
+    <p id="aWhere"></p>
+    <div class="arow">
+      <label>Carburant<select id="aFuel"></select></label>
+      <label>Prix max / litre <b id="aCur"></b><input id="aMax" inputmode="decimal" placeholder="1,750" autocomplete="off"></label>
+      <label>Rayon<select id="aRad"></select></label>
+    </div>
+    <div class="abtns">
+      <button id="aAdd" type="button" class="solid">Créer l'alerte</button>
+      <button id="aPerm" type="button">Activer les notifications</button>
+      <button id="aCheck" type="button">Vérifier maintenant</button>
+    </div>
+    <p id="aHint" class="hint"></p>
+    <ul id="aList"></ul>
+  </div>
+</section>
+<div id="toast" role="alert" hidden></div>
+
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@4.7.1/dist/maplibre-gl.js"></script>
+<!-- Si le front est hébergé ailleurs que le serveur API : décommentez et mettez l'URL du serveur -->
+<!-- <script>window.RIAMO_API_BASE = "https://api.mon-domaine.fr";</script> -->
+<script src="world.js"></script>
+</body>
+</html>

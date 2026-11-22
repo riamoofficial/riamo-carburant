@@ -1,0 +1,11 @@
+{
+  "name": "riamo-carburant",
+  "version": "2.0.0",
+  "description": "Riamo Carburant : stations-service, prix et bornes de recharge (France, Europe, monde)",
+  "private": true,
+  "scripts": {
+    "start": "node server/server.js",
+    "test": "node server/selftest.js"
+  },
+  "engines": { "node": ">=18" }
+}
